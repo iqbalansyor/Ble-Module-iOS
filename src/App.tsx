@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -7,26 +7,20 @@ import {
   View,
   FlatList,
 } from 'react-native';
-import useBLE, {Peripheral} from './ble/useBLE';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Toast from 'react-native-simple-toast';
+import useBLE from './ble/useBLE';
+import {Peripheral} from './ble/src/types';
 
 const App = () => {
   const {
-    requestPermissions,
+    start,
     scanForPeripherals,
     allPeripherals,
     onStartScanning,
     onStopScanning,
   } = useBLE();
   const [isScanning, setIsScanning] = useState(false);
-  const scanForDevices = () => {
-    requestPermissions(isGranted => {
-      if (isGranted) {
-        scanForPeripherals();
-      }
-    });
-  };
 
   onStartScanning(() => {
     setIsScanning(true);
@@ -44,13 +38,17 @@ const App = () => {
 
   console.log('*** BLE', allPeripherals);
 
+  useEffect(() => {
+    start();
+  }, []);
+
   const renderItem = ({item}: {item: Peripheral}) => {
     const backgroundColor = 'rgb(16, 91, 160)';
     return (
       <TouchableOpacity onPress={() => {}}>
         <View style={[styles.row, {backgroundColor}]}>
           <Text style={styles.peripheralName}>
-            {item.name} - {item?.advertisementData?.localName}
+            {item.name} - {item?.advertising?.localName}
           </Text>
           <Text style={styles.rssi}>RSSI: {item.rssi}</Text>
           <Text style={styles.peripheralId}>{item.id}</Text>
@@ -67,7 +65,7 @@ const App = () => {
           onPress={() => {
             if (isScanning) return;
             setIsScanning(!isScanning);
-            scanForDevices();
+            scanForPeripherals();
           }}
           style={styles.ctaButton}>
           <Text style={styles.ctaButtonText}>
@@ -114,6 +112,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 20,
+    backgroundColor: 'black',
   },
   ctaButton: {
     backgroundColor: 'purple',

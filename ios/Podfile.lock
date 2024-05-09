@@ -7,7 +7,6 @@ PODS:
   - hermes-engine (0.74.1):
     - hermes-engine/Pre-built (= 0.74.1)
   - hermes-engine/Pre-built (0.74.1)
-  - MultiplatformBleAdapter (0.2.0)
   - RCT-Folly (2024.01.01.00):
     - boost
     - DoubleConversion
@@ -936,28 +935,6 @@ PODS:
   - React-Mapbuffer (0.74.1):
     - glog
     - React-debug
-  - react-native-ble-plx (3.1.2):
-    - DoubleConversion
-    - glog
-    - hermes-engine
-    - MultiplatformBleAdapter (= 0.2.0)
-    - RCT-Folly (= 2024.01.01.00)
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Codegen
-    - React-Core
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-rendererdebug
-    - React-utils
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - Yoga
   - react-native-quick-base64 (2.1.2):
     - DoubleConversion
     - glog
@@ -979,6 +956,9 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-simple-toast (3.3.1):
+    - React-Core
+    - Toast (~> 4)
   - React-nativeconfig (0.74.1)
   - React-NativeModulesApple (0.74.1):
     - glog
@@ -1213,6 +1193,7 @@ PODS:
   - RNPermissions (4.1.5):
     - React-Core
   - SocketRocket (0.7.0)
+  - Toast (4.1.1)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1248,8 +1229,8 @@ DEPENDENCIES:
   - React-jsitracing (from `../node_modules/react-native/ReactCommon/hermes/executor/`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
-  - react-native-ble-plx (from `../node_modules/react-native-ble-plx`)
   - react-native-quick-base64 (from `../node_modules/react-native-quick-base64`)
+  - react-native-simple-toast (from `../node_modules/react-native-simple-toast`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1279,8 +1260,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - MultiplatformBleAdapter
     - SocketRocket
+    - Toast
 
 EXTERNAL SOURCES:
   boost:
@@ -1344,10 +1325,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
-  react-native-ble-plx:
-    :path: "../node_modules/react-native-ble-plx"
   react-native-quick-base64:
     :path: "../node_modules/react-native-quick-base64"
+  react-native-simple-toast:
+    :path: "../node_modules/react-native-simple-toast"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1408,7 +1389,6 @@ SPEC CHECKSUMS:
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: c5d68082e772fa1c511173d6b30a9de2c05a69a2
   hermes-engine: 16b8530de1b383cdada1476cf52d1b52f0692cbc
-  MultiplatformBleAdapter: b1fddd0d499b96b607e00f0faa8e60648343dc1d
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
   RCTDeprecation: efb313d8126259e9294dc4ee0002f44a6f676aba
   RCTRequired: f49ea29cece52aee20db633ae7edc4b271435562
@@ -1433,8 +1413,8 @@ SPEC CHECKSUMS:
   React-jsitracing: 233d1a798fe0ff33b8e630b8f00f62c4a8115fbc
   React-logger: 7e7403a2b14c97f847d90763af76b84b152b6fce
   React-Mapbuffer: 11029dcd47c5c9e057a4092ab9c2a8d10a496a33
-  react-native-ble-plx: cd7b99ddaf7c15e652c63f87a12e96c715ee3c80
   react-native-quick-base64: a74c4b2607b9de016877a8edb776b6ac59785809
+  react-native-simple-toast: 1f1cc551d419bc0ab05dcb0136554006c274789d
   React-nativeconfig: b0073a590774e8b35192fead188a36d1dca23dec
   React-NativeModulesApple: df46ff3e3de5b842b30b4ca8a6caae6d7c8ab09f
   React-perflogger: 3d31e0d1e8ad891e43a09ac70b7b17a79773003a
@@ -1461,6 +1441,7 @@ SPEC CHECKSUMS:
   RNDeviceInfo: 42aadf1282ffa0a88dc38a504a7be145eb010dfa
   RNPermissions: 294531ede5a64d1528463e88fffef05675842042
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
+  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
   Yoga: 348f8b538c3ed4423eb58a8e5730feec50bce372
 
 PODFILE CHECKSUM: 065c0aa14a121a0596aa30ddf168a86c2e5dc681

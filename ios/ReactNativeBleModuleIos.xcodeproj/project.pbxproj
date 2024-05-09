@@ -15,6 +15,9 @@
 		7699B88040F8A987B510C191 /* libPods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.a */; };
 		7A6A7F5A680155CB487D5BEA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EA6E40D11C62A025BF299E7B /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F064EB812BECB9DF00AE2B2E /* BleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064EB7C2BECB9DE00AE2B2E /* BleModule.swift */; };
+		F064EB822BECB9DF00AE2B2E /* BleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F064EB7D2BECB9DE00AE2B2E /* BleModule.m */; };
+		F064EB832BECB9DF00AE2B2E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064EB802BECB9DF00AE2B2E /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +48,13 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-ReactNativeBleModuleIos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeBleModuleIos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ReactNativeBleModuleIos/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests/Pods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.release.xcconfig"; sourceTree = "<group>"; };
-		EA6E40D11C62A025BF299E7B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = ReactNativeBleModuleIos/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		EA6E40D11C62A025BF299E7B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = ReactNativeBleModuleIos/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F064EB792BECA96900AE2B2E /* ReactNativeBleModuleIos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactNativeBleModuleIos-Bridging-Header.h"; sourceTree = "<group>"; };
+		F064EB7C2BECB9DE00AE2B2E /* BleModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleModule.swift; sourceTree = "<group>"; };
+		F064EB7D2BECB9DE00AE2B2E /* BleModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BleModule.m; sourceTree = "<group>"; };
+		F064EB7F2BECB9DF00AE2B2E /* BleModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BleModule.h; sourceTree = "<group>"; };
+		F064EB802BECB9DF00AE2B2E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeBleModuleIos */ = {
 			isa = PBXGroup;
 			children = (
+				F064EB782BECA94900AE2B2E /* BleModule */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -153,6 +162,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F064EB782BECA94900AE2B2E /* BleModule */ = {
+			isa = PBXGroup;
+			children = (
+				F064EB7F2BECB9DF00AE2B2E /* BleModule.h */,
+				F064EB7D2BECB9DE00AE2B2E /* BleModule.m */,
+				F064EB7C2BECB9DE00AE2B2E /* BleModule.swift */,
+				F064EB802BECB9DF00AE2B2E /* Helper.swift */,
+				F064EB792BECA96900AE2B2E /* ReactNativeBleModuleIos-Bridging-Header.h */,
+			);
+			path = BleModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,7 +232,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -399,7 +420,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				F064EB812BECB9DF00AE2B2E /* BleModule.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				F064EB822BECB9DF00AE2B2E /* BleModule.m in Sources */,
+				F064EB832BECB9DF00AE2B2E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -445,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-ReactNativeBleModuleIos-ReactNativeBleModuleIosTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ReactNativeBleModuleIosTests/Info.plist;
@@ -486,6 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ReactNativeBleModuleIos;
+				SWIFT_OBJC_BRIDGING_HEADER = "BleModule/ReactNativeBleModuleIos-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -512,6 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ReactNativeBleModuleIos;
+				SWIFT_OBJC_BRIDGING_HEADER = "BleModule/ReactNativeBleModuleIos-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -590,10 +618,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -665,10 +690,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
