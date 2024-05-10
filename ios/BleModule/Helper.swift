@@ -98,53 +98,6 @@ class Helper {
         
         return adv
     }
-    
-    static func decodeCharacteristicProperties(_ p: CBCharacteristicProperties) -> Dictionary<String, Any> {
-        var props: [String: Any] = [:]
-        
-        // NOTE: props strings need to be consistent across iOS and Android
-        if p.contains(.broadcast) {
-            props["Broadcast"] = "Broadcast"
-        }
-        
-        if p.contains(.read) {
-            props["Read"] = "Read"
-        }
-        
-        if p.contains(.writeWithoutResponse) {
-            props["WriteWithoutResponse"] = "WriteWithoutResponse"
-        }
-        
-        if p.contains(.write) {
-            props["Write"] = "Write"
-        }
-        
-        if p.contains(.notify) {
-            props["Notify"] = "Notify"
-        }
-        
-        if p.contains(.indicate) {
-            props["Indicate"] = "Indicate"
-        }
-        
-        if p.contains(.authenticatedSignedWrites) {
-            props["AuthenticateSignedWrites"] = "AuthenticateSignedWrites"
-        }
-        
-        if p.contains(.extendedProperties) {
-            props["ExtendedProperties"] = "ExtendedProperties"
-        }
-        
-        if p.contains(.notifyEncryptionRequired) {
-            props["NotifyEncryptionRequired"] = "NotifyEncryptionRequired"
-        }
-        
-        if p.contains(.indicateEncryptionRequired) {
-            props["IndicateEncryptionRequired"] = "IndicateEncryptionRequired"
-        }
-        
-        return props
-    }
 }
 
 class Peripheral:Hashable {
@@ -199,8 +152,7 @@ class Peripheral:Hashable {
                     characteristicDictionary["value"] = Helper.dataToArrayBuffer(value)
                 }
                 
-                characteristicDictionary["properties"] = Helper.decodeCharacteristicProperties(characteristic.properties)
-                
+                // TODO: Need to fill properties of characteristic here
                 characteristicDictionary["isNotifying"] = characteristic.isNotifying
                 
                 var descriptorList = [[String: Any]]()

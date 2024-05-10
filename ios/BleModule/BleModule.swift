@@ -1,7 +1,6 @@
 import Foundation
 import CoreBluetooth
 
-
 @objc(BleModule)
 class BleModule: RCTEventEmitter, CBCentralManagerDelegate, CBPeripheralDelegate {
     
