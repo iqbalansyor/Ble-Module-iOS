@@ -36,6 +36,8 @@ const App = () => {
 // .... use function and props on your component
 
 ````
+
+you can see the usage here (https://github.com/iqbalansyor/Ble-Module-iOS/blob/main/src/App.tsx)
   
 ### Run the application
 
